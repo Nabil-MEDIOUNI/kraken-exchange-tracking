@@ -2,7 +2,11 @@
 
 A self-hosted portfolio tracker for Kraken exchange that unifies **Futures** and **Spot** market data into a single API with server-rendered HTML dashboards.
 
-![alt text](./public/assets/image.png)
+## Positions Tracking
+![alt text](./public/assets/positions.png)
+
+## Transactions Tracking
+![alt text](./public/assets/transactions.png)
 
 ## What It Does
 
@@ -54,12 +58,6 @@ KRAKEN_FUTURES_PUBLIC_KEY=your_futures_public_key
 KRAKEN_FUTURES_PRIVATE_KEY=your_futures_private_key
 KRAKEN_SPOT_API_KEY=your_spot_api_key
 KRAKEN_SPOT_API_SECRET=your_spot_api_secret
-
-# Optional
-PORT=3000
-API_TOKEN=your_bearer_token
-LOG_LEVEL=info
-NODE_ENV=development
 ```
 
 ### Run
