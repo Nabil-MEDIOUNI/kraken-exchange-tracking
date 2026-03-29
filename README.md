@@ -1,4 +1,4 @@
-# Kraken Exchange Tracking
+# Kraken Exchange Tracker
 
 A portfolio tracker for Kraken exchange that unifies **Futures** and **Spot** market data into a single API with server-rendered HTML dashboards.
 
