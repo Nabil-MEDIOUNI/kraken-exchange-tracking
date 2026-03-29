@@ -2,18 +2,18 @@
 
 A self-hosted portfolio tracker for Kraken exchange that unifies **Futures** and **Spot** market data into a single API with server-rendered HTML dashboards.
 
-## Positions Tracking
-![alt text](./public/assets/positions.png)
-
-## Transactions Tracking
-![alt text](./public/assets/transactions.png)
-
 ## What It Does
 
 - Tracks  **positions** and **transactions** of futures and spot markets, including fees and P&L percentages
 - Computes **FIFO cost basis** and realized P&L for all spot trades (Koinly-compatible)
 - Provides **HTML dashboards** for visualizing positions and transactions with profit/loss metrics
 - Exposes a **REST API** for programmatic access to all data
+
+## Positions Tracking
+![alt text](./public/assets/positions.png)
+
+## Transactions Tracking
+![alt text](./public/assets/transactions.png)
 
 ## API Endpoints
 
