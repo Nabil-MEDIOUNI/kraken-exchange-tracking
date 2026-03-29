@@ -1,8 +1,8 @@
 # Kraken Exchange Tracking
 
-![alt text](./public/assets/image.png)
-
 A self-hosted portfolio tracker for Kraken exchange that unifies **Futures** and **Spot** market data into a single API with server-rendered HTML dashboards.
+
+![alt text](./public/assets/image.png)
 
 ## What It Does
 
