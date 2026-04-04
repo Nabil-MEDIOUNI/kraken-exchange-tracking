@@ -103,7 +103,7 @@ function inTaxYear(dateStr: string, year: number): boolean {
 }
 
 function usdToEur(usd: number, rate: number): number {
-  return +(usd * rate).toFixed(4);
+  return +(usd / rate).toFixed(4);
 }
 
 function r(n: number): number {

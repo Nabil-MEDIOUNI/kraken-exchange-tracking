@@ -161,7 +161,7 @@ function handleError(error: unknown): { content: Array<{ type: "text"; text: str
 // --- MCP Server ---
 const server = new McpServer({
   name: "kraken-portfolio-mcp",
-  version: "1.0.0",
+  version: "2.0.0",
 });
 
 // --- Schemas ---
@@ -528,7 +528,15 @@ server.registerTool(
     title: "Get Portfolio Summary",
     description: `Get a combined overview of your entire Kraken portfolio.
 
-Returns futures balances (portfolio value, margin, P&L), spot balances (all non-zero assets), and recent futures position count. Useful for a quick snapshot of your full portfolio state.`,
+Returns futures balances (portfolio value, margin, P&L) and spot balances (all non-zero assets).
+
+The web dashboard at / provides a unified view with:
+- Summary cards: Cash Balance, Tax Overview (with filing status), Futures P&L, Spot P&L
+- Two tabs: Transactions and Positions, each with source filtering (All/Futures/Spots)
+- Positions support side filtering (Long/Short), date range, and sortable columns
+- Tax overview shows taxable income after Sparerpauschbetrag and Freigrenze allowances
+- All filters are URL-shareable via query parameters
+- Year defaults to current year`,
     inputSchema: {},
     annotations: {
       readOnlyHint: true,
@@ -617,13 +625,13 @@ server.registerTool(
     description: `Generate a complete German crypto tax report (Steuerbericht) for a given year.
 
 Fetches all spot transactions, margin positions, and futures data, then classifies everything under German tax law:
-- § 23 EStG: Spot sells (FIFO cost basis), margin positions, loan fees
-- § 22 Nr. 3 EStG: Staking rewards
-- § 20 EStG: Futures P&L and funding fees (USD→EUR converted)
+- § 23 EStG: Spot sells/swaps (FIFO cost basis, holding period check), margin positions, loan fees (deductible)
+- § 22 Nr. 3 EStG: Staking rewards (FMV at receipt)
+- § 20 EStG: Futures realized P&L and funding fees (USD→EUR converted via live EURUSD rate)
 
-Applies Freigrenze rules (1.000 EUR for § 23, 256 EUR for § 22 Nr. 3) and the 20.000 EUR derivative loss cap.
+Applies Freigrenze rules (1,000 EUR for § 23 from 2024, 600 EUR before; 256 EUR for § 22 Nr. 3) and the 20,000 EUR/year derivative loss cap (§ 20 Abs. 6 S. 5).
 
-Returns a compact summary with totals, Elster line references, and a CSV with all individual transactions.
+Returns a summary with totals, Elster line references, and a CSV. The unified dashboard at / also shows a simplified tax overview per year in the Tax Summary card (visible when a specific year is selected).
 
 Args:
   - year (number, required): Tax year (e.g. 2025).`,

@@ -3,9 +3,6 @@ import type { Request, Response, NextFunction } from "express";
 import { createFuturesClient } from "../auth/futures.ts";
 import { getSince, getCount } from "../utils/kraken-helpers.ts";
 import { buildFuturesTransactions } from "../utils/futures-transaction-builder.ts";
-import { buildFuturesPositionsHTML } from "../views/positions-view.ts";
-import { buildFuturesTransactionsHTML } from "../views/transactions-view.ts";
-
 const wrap = (fn: (req: Request, res: Response) => Promise<void>) =>
   (req: Request, res: Response, next: NextFunction) => fn(req, res).catch(next);
 
@@ -63,27 +60,6 @@ export function createFuturesRouter() {
     );
     const transactions = buildFuturesTransactions(data.logs || []);
     res.json({ count: transactions.length, transactions });
-  }));
-
-  router.get("/positions/view", wrap(async (req, res) => {
-    const since = getSince(req);
-    const count = getCount(req, 50);
-    const data = await client.request(
-      `/api/history/v3/positions?since=${since}&count=${count}&sort=desc&closed=true&decreased=true&reversed=true`,
-      { postDataInSign: true },
-    );
-    res.type("html").send(buildFuturesPositionsHTML(data.elements || []));
-  }));
-
-  router.get("/transactions/view", wrap(async (req, res) => {
-    const since = getSince(req);
-    const count = getCount(req, 5000);
-    const data = await client.request(
-      `/api/history/v3/account-log?since=${since}&count=${count}&sort=desc`,
-      { postDataInSign: true },
-    );
-    const transactions = buildFuturesTransactions(data.logs || []);
-    res.type("html").send(buildFuturesTransactionsHTML(transactions));
   }));
 
   return router;

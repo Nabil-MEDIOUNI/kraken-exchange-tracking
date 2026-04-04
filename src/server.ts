@@ -7,8 +7,6 @@ import { createSpotRouter } from "./routes/spot.ts";
 import { createSyncRouter } from "./routes/sync.ts";
 import { refreshEurUsdRate } from "./views/view-utils.ts";
 import { buildDashboardHTML } from "./views/dashboard-view.ts";
-import { buildKoinlyTransactionsHTML } from "./views/koinly-transactions-view.ts";
-import { buildTransactionsPageHTML } from "./views/transactions-page.ts";
 import { logger } from "./utils/logger.ts";
 import type { Request, Response, NextFunction } from "express";
 const REQUIRED_ENV = ["KRAKEN_FUTURES_PUBLIC_KEY", "KRAKEN_FUTURES_PRIVATE_KEY", "KRAKEN_SPOT_API_KEY", "KRAKEN_SPOT_API_SECRET"];
@@ -20,21 +18,19 @@ for (const key of REQUIRED_ENV) {
 }
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 app.use(requireAuth);
 app.use(requestLogger);
 
+// Serve local asset icons
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use("/assets", express.static(resolve(__dirname, "assets")));
+
 app.get("/", (_req: Request, res: Response) => {
   res.type("html").send(buildDashboardHTML());
-});
-
-app.get("/koinly/transactions", (_req: Request, res: Response) => {
-  res.type("html").send(buildKoinlyTransactionsHTML());
-});
-
-app.get("/transactions", (_req: Request, res: Response) => {
-  res.type("html").send(buildTransactionsPageHTML());
 });
 
 app.get("/health", (_req: Request, res: Response) => {
@@ -55,9 +51,10 @@ app.use((err: any, req: Request, res: Response, _next: NextFunction) => {
 const server = app.listen(PORT, async () => {
   await refreshEurUsdRate();
   logger.info({ port: PORT }, "Kraken Portfolio API started");
-  logger.info("Futures: GET /balances, /positions, /transactions");
-  logger.info("Spot:    GET /spot/balances, /spot/positions, /spot/transactions");
-  logger.info("Views:   GET /positions/view, /transactions/view, /spot/positions/view, /spot/transactions/view");
+  logger.info("Dashboard: GET /");
+  logger.info("Futures:   GET /futures/balances, /futures/positions, /futures/transactions");
+  logger.info("Spot:      GET /spots/balances, /spots/positions, /spots/transactions");
+  logger.info("Sync:      GET /sync (SSE)");
 });
 
 function shutdown(signal: string) {

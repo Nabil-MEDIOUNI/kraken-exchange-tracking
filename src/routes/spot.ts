@@ -3,8 +3,6 @@ import type { Request, Response, NextFunction } from "express";
 import { createSpotClient } from "../auth/spot.ts";
 import { normalizeAsset, parsePair, sleep } from "../utils/kraken-helpers.ts";
 import { buildSpotTransactions } from "../utils/spot-transaction-builder.ts";
-import { buildSpotPositionsHTML } from "../views/positions-view.ts";
-import { buildSpotTransactionsHTML } from "../views/transactions-view.ts";
 import { TTLCache } from "../utils/cache.ts";
 import { logger } from "../utils/logger.ts";
 import type { NormalizedPosition, SpotTransaction } from "../types/common.ts";
@@ -108,16 +106,6 @@ export function createSpotRouter() {
   router.get("/transactions", wrap(async (req, res) => {
     const transactions = await fetchTransactions();
     res.json({ count: transactions.length, transactions });
-  }));
-
-  router.get("/positions/view", wrap(async (req, res) => {
-    const positions = await fetchPositions();
-    res.type("html").send(buildSpotPositionsHTML(positions));
-  }));
-
-  router.get("/transactions/view", wrap(async (req, res) => {
-    const transactions = await fetchTransactions();
-    res.type("html").send(buildSpotTransactionsHTML(transactions));
   }));
 
   return router;

@@ -1,8 +1,3 @@
-export interface CoinIcon {
-  bg: string;
-  letter: string;
-}
-
 export interface CurrencyAmount {
   amount: string;
   currency: { symbol: string };

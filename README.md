@@ -1,116 +1,126 @@
-# Kraken Portfolio MCP
+# Kraken Portfolio
 
-Kraken Portfolio tracker with REST API, HTML dashboards, and MCP server. Tracks spot/margin/futures positions, computes FIFO cost basis, and generates German crypto tax reports.
+A portfolio tracker and tax tool for Kraken day traders in Germany. Connects to the Kraken Futures and Spot APIs, computes FIFO cost basis, and tells you if you owe tax.
 
-## What It Does
+## What you get
 
-- Tracks **positions** and **transactions** of futures and spot markets, including fees and P&L percentages
-- Computes **FIFO cost basis** and realized P&L for all spot trades (Koinly-compatible)
-- Generates **German crypto tax reports** with a single MCP tool call classifies per § 23, § 22, § 20 EStG with Freigrenze, holding period checks, and CSV export
-- Provides **tax-ready transaction data**, all trades include FIFO cost basis with acquisition dates, realized gains/losses, and fees in EUR
-- Provides **HTML dashboards** for visualizing positions and transactions with profit/loss metrics
-- Exposes a **REST API** for programmatic access to all data
-- Includes an **MCP server** (Model Context Protocol) so LLMs can query your portfolio directly
+**Dashboard** at `http://localhost:8000` with:
+- Cash balance across Futures and Spot accounts
+- Tax overview with filing status (single/married) and allowance calculations
+- Futures P&L and Spot P&L summaries
+- Merged transaction history with source filtering, date range, and pagination
+- Positions table with sorting, side filtering (Long/Short), and source filtering
+- Everything filterable by year, shareable via URL
 
-## Positions Tracking
-![alt text](./public/assets/positions.png)
+**MCP Server** for AI assistants (Claude Code, Cursor, Codex) to query your portfolio and generate tax reports.
 
-## Transactions Tracking
-![alt text](./public/assets/transactions.png)
+**REST API** for programmatic access to all your Kraken data.
 
-## API Endpoints
-
-### Futures
-
-| Endpoint | Description |
-|----------|-------------|
-| `GET /futures/balances` | Flex + cash account balances |
-| `GET /futures/positions` | Derivatives position history |
-| `GET /futures/transactions` | P&L, funding fees, transfers |
-| `GET /futures/positions/view` | HTML positions table |
-| `GET /futures/transactions/view` | HTML transactions dashboard |
-
-### Spot
-
-| Endpoint | Description |
-|----------|-------------|
-| `GET /spots/balances` | Non-zero spot balances |
-| `GET /spots/positions` | Margin position history |
-| `GET /spots/transactions` | FIFO cost basis transactions |
-| `GET /spots/positions/view` | HTML positions table |
-| `GET /spots/transactions/view` | HTML transactions dashboard |
-
-## MCP Server
-
-The project includes an MCP server that exposes your Kraken portfolio data as tools for any MCP-compatible client (Claude Code, Codex, etc.).
-
-### Connecting to an MCP Client
-
-Add the MCP server to your client's settings (Claude Code, Cursor, Codex, etc.):
-
-```json
-{
-  "mcpServers": {
-    "kraken-portfolio": {
-      "command": "npx",
-      "args": ["tsx", "/absolute/path/to/kraken-portfolio-mcp/src/mcp-server.ts"],
-      "env": {
-        "KRAKEN_FUTURES_PUBLIC_KEY": "your_futures_public_key",
-        "KRAKEN_FUTURES_PRIVATE_KEY": "your_futures_private_key",
-        "KRAKEN_SPOT_API_KEY": "your_spot_api_key",
-        "KRAKEN_SPOT_API_SECRET": "your_spot_api_secret"
-      }
-    }
-  }
-}
-```
-
-### German Tax Report
-
-The `kraken_tracker_german_tax_report` tool generates a complete Steuerbericht in one call. Just prompt your MCP-compatible AI assistant:
-
-> Generate my German crypto tax report for 2025
-
-The tool fetches all data internally (spot transactions, margin positions, futures P&L), then classifies everything under German tax law:
-
-- **§ 23 EStG** — Spot sells and crypto-to-crypto swaps with FIFO cost basis, 1-year holding period check (Spekulationsfrist), margin positions, deductible loan fees
-- **§ 22 Nr. 3 EStG** — Staking rewards at EUR fair market value on receipt date
-- **§ 20 EStG** — Futures realized P&L and funding fees (USD to EUR converted), with €20,000 loss offset cap
-
-Applies Freigrenze rules (€1,000 for private sales, €256 for staking) with year-dependent thresholds (€600 for years before 2024). Returns Elster line references and a CSV compatible with WISO Steuer and Taxfix.
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- Kraken API keys (Futures + Spot)
-
-### Setup
+## Quick start
 
 ```bash
 git clone <repo-url> && cd kraken-portfolio-mcp
 npm install
 ```
 
-Create a `.env` file:
+Create `.env`:
 
 ```env
-KRAKEN_FUTURES_PUBLIC_KEY=your_futures_public_key
-KRAKEN_FUTURES_PRIVATE_KEY=your_futures_private_key
-KRAKEN_SPOT_API_KEY=your_spot_api_key
-KRAKEN_SPOT_API_SECRET=your_spot_api_secret
+KRAKEN_FUTURES_PUBLIC_KEY=your_key
+KRAKEN_FUTURES_PRIVATE_KEY=your_key
+KRAKEN_SPOT_API_KEY=your_key
+KRAKEN_SPOT_API_SECRET=your_key
 ```
 
-### Run
+Run:
 
 ```bash
-# Development (auto-reload on file changes)
-npm run dev
-
-# Production
-npm start
-
-# MCP Server (stdio transport for LLM clients)
-npm run mcp
+npm run dev     # dashboard with auto-reload
+npm start       # production
+npm run mcp     # MCP server for AI assistants
 ```
+
+Open `http://localhost:8000` and hit Sync.
+
+## Tax reporting
+
+Built for German tax law. The dashboard shows a live tax overview per year. For a detailed report, ask your AI assistant:
+
+> Generate my German crypto tax report for 2025
+
+The MCP tool handles everything:
+- **Spot trades** FIFO cost basis, 1-year holding period check, Freigrenze (1,000 EUR)
+- **Margin positions** P&L classified under private sales
+- **Futures** realized P&L + funding fees, Sparerpauschbetrag (1,000/2,000 EUR), 20k loss cap
+- **Staking** rewards at EUR fair market value, 256 EUR Freigrenze
+
+Returns Elster line references and a CSV for WISO Steuer or Taxfix.
+
+## API
+
+### Futures
+
+| Endpoint | Returns |
+|----------|---------|
+| `GET /futures/balances` | Flex + cash account balances |
+| `GET /futures/positions` | Closed position history with P&L |
+| `GET /futures/transactions` | Realized P&L, funding fees, transfers |
+
+### Spot
+
+| Endpoint | Returns |
+|----------|---------|
+| `GET /spots/balances` | All non-zero balances |
+| `GET /spots/positions` | Closed margin positions with P&L |
+| `GET /spots/transactions` | Full history with FIFO cost basis |
+
+### Other
+
+| Endpoint | Returns |
+|----------|---------|
+| `GET /` | Dashboard |
+| `GET /sync` | SSE stream for full data sync |
+| `GET /health` | Server status |
+
+## MCP setup
+
+Add to your AI client config:
+
+```json
+{
+  "mcpServers": {
+    "kraken-portfolio": {
+      "command": "npx",
+      "args": ["tsx", "/path/to/kraken-portfolio-mcp/src/mcp-server.ts"],
+      "env": {
+        "KRAKEN_FUTURES_PUBLIC_KEY": "...",
+        "KRAKEN_FUTURES_PRIVATE_KEY": "...",
+        "KRAKEN_SPOT_API_KEY": "...",
+        "KRAKEN_SPOT_API_SECRET": "..."
+      }
+    }
+  }
+}
+```
+
+### Available tools
+
+| Tool | What it does |
+|------|-------------|
+| `kraken_tracker_futures_balances` | Futures account balances |
+| `kraken_tracker_futures_positions` | Closed futures positions |
+| `kraken_tracker_futures_transactions` | Futures transaction history |
+| `kraken_tracker_spot_balances` | Spot balances |
+| `kraken_tracker_spot_positions` | Spot margin positions |
+| `kraken_tracker_spot_transactions` | Spot transactions with FIFO |
+| `kraken_tracker_portfolio_summary` | Combined portfolio overview |
+| `kraken_tracker_german_tax_report` | Full German tax report with CSV |
+
+## Tech
+
+- TypeScript + Express
+- MCP SDK for AI tool integration
+- FIFO lot tracking for cost basis
+- Server-Sent Events for live sync
+- CoinGecko API for crypto icons
+- No frontend framework single self-contained HTML page
