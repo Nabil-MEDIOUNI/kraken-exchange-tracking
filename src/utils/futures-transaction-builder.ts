@@ -1,19 +1,36 @@
 import type { AccountLog } from "../types/kraken.ts";
 import type { FuturesTransaction } from "../types/common.ts";
 
+/**
+ * Returns the 8-hour funding window key for a given date.
+ * Kraken futures funding happens at 00:00, 08:00, 16:00 UTC.
+ * Trades within the same window get aggregated into one Realized P&L row
+ * (matching Koinly's display behavior).
+ */
+function fundingWindowKey(dateStr: string, contract: string): string {
+  const d = new Date(dateStr);
+  const h = d.getUTCHours();
+  const window = h < 8 ? "00" : h < 16 ? "08" : "16";
+  const day = d.toISOString().substring(0, 10);
+  return `${day}|${window}|${contract}`;
+}
+
 export function buildFuturesTransactions(logs: AccountLog[]): FuturesTransaction[] {
   const transactions: FuturesTransaction[] = [];
 
+  // Group trades by 8-hour funding window + contract (matches Koinly's aggregation)
   const tradeGroups: Record<string, AccountLog[]> = {};
   for (const log of logs) {
     if (log.info?.toLowerCase() === "futures trade") {
-      const key = log.date + "|" + log.contract;
+      const key = fundingWindowKey(log.date, log.contract);
       if (!tradeGroups[key]) tradeGroups[key] = [];
       tradeGroups[key].push(log);
     }
   }
   for (const entries of Object.values(tradeGroups)) {
     let totalFee = 0, totalPnL = 0;
+    // Use the latest entry's date as the display date
+    entries.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     const { date, contract, asset } = entries[0];
     for (const entry of entries) { totalFee += entry.fee || 0; totalPnL += entry.realized_pnl || 0; }
     transactions.push({
@@ -26,22 +43,11 @@ export function buildFuturesTransactions(logs: AccountLog[]): FuturesTransaction
     });
   }
 
+  // Group funding fees by 8-hour window + contract (matches Koinly's aggregation)
   const fundingLogs = logs.filter((l) => l.info?.toLowerCase() === "funding rate change").sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  const tradeTimesByContract: Record<string, number[]> = {};
-  for (const log of logs) {
-    if (log.info?.toLowerCase() === "futures trade" && log.contract) {
-      if (!tradeTimesByContract[log.contract]) tradeTimesByContract[log.contract] = [];
-      tradeTimesByContract[log.contract].push(new Date(log.date).getTime());
-    }
-  }
-  for (const times of Object.values(tradeTimesByContract)) times.sort((a, b) => a - b);
-
   const fundingGroups: Record<string, AccountLog[]> = {};
   for (const log of fundingLogs) {
-    const timestamp = new Date(log.date).getTime();
-    const contractTimes = tradeTimesByContract[log.contract] || [];
-    const nextTradeTime = contractTimes.find((t) => t > timestamp) || "end";
-    const key = log.contract + "|" + nextTradeTime;
+    const key = fundingWindowKey(log.date, log.contract);
     if (!fundingGroups[key]) fundingGroups[key] = [];
     fundingGroups[key].push(log);
   }

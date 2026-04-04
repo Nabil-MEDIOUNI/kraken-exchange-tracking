@@ -4,7 +4,11 @@ import { requireAuth } from "./middleware/auth.ts";
 import { requestLogger } from "./middleware/logging.ts";
 import { createFuturesRouter } from "./routes/futures.ts";
 import { createSpotRouter } from "./routes/spot.ts";
+import { createSyncRouter } from "./routes/sync.ts";
 import { refreshEurUsdRate } from "./views/view-utils.ts";
+import { buildDashboardHTML } from "./views/dashboard-view.ts";
+import { buildKoinlyTransactionsHTML } from "./views/koinly-transactions-view.ts";
+import { buildTransactionsPageHTML } from "./views/transactions-page.ts";
 import { logger } from "./utils/logger.ts";
 import type { Request, Response, NextFunction } from "express";
 const REQUIRED_ENV = ["KRAKEN_FUTURES_PUBLIC_KEY", "KRAKEN_FUTURES_PRIVATE_KEY", "KRAKEN_SPOT_API_KEY", "KRAKEN_SPOT_API_SECRET"];
@@ -21,12 +25,25 @@ const PORT = process.env.PORT || 3000;
 app.use(requireAuth);
 app.use(requestLogger);
 
+app.get("/", (_req: Request, res: Response) => {
+  res.type("html").send(buildDashboardHTML());
+});
+
+app.get("/koinly/transactions", (_req: Request, res: Response) => {
+  res.type("html").send(buildKoinlyTransactionsHTML());
+});
+
+app.get("/transactions", (_req: Request, res: Response) => {
+  res.type("html").send(buildTransactionsPageHTML());
+});
+
 app.get("/health", (_req: Request, res: Response) => {
   res.json({ status: "ok", uptime: process.uptime() });
 });
 
 app.use("/futures", createFuturesRouter());
 app.use("/spots", createSpotRouter());
+app.use("/sync", createSyncRouter());
 
 app.use((err: any, req: Request, res: Response, _next: NextFunction) => {
   logger.error({ err, method: req.method, path: req.path }, "Request failed");

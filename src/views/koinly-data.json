@@ -1,0 +1,988 @@
+{
+  "dateGroups": [
+    {
+      "date": "Mar 29, 2026",
+      "rows": [
+        {
+          "rowId": "147:1102",
+          "type": "Deposit",
+          "time": "4:42 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "588,26 €",
+          "eurEquiv": null,
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1116",
+          "type": "Withdrawal",
+          "time": "4:42 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "588,26 €",
+          "eurEquiv": "≈ 588,26 €",
+          "tag": "transfer",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1134",
+          "type": "Deposit",
+          "time": "4:42 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1149",
+          "type": "Withdrawal",
+          "time": "4:41 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": "transfer",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1167",
+          "type": "Deposit",
+          "time": "4:38 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": "transfer",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1185",
+          "type": "Withdrawal",
+          "time": "4:38 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1200",
+          "type": "Deposit",
+          "time": "4:37 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "588,26 €",
+          "eurEquiv": null,
+          "tag": "transfer",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1217",
+          "type": "Withdrawal",
+          "time": "4:37 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "588,26 €",
+          "eurEquiv": "≈ 588,26 €",
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1232",
+          "type": "Deposit",
+          "time": "4:34 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1247",
+          "type": "Withdrawal",
+          "time": "4:34 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": "transfer",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1265",
+          "type": "Deposit",
+          "time": "4:34 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": "transfer",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1283",
+          "type": "Withdrawal",
+          "time": "4:34 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "27,89 $",
+          "eurEquiv": "≈ 24,16 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 27, 2026",
+      "rows": [
+        {
+          "rowId": "147:1298",
+          "type": "Realized P&L",
+          "time": "8:35 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "6,28 $",
+          "eurEquiv": "≈ 5,44 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1318",
+          "type": "Funding fee",
+          "time": "8:00 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,0032 $",
+          "eurEquiv": "≈ 0,0028 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1333",
+          "type": "Realized P&L",
+          "time": "7:07 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,35 $",
+          "eurEquiv": "≈ 0,30 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 18, 2026",
+      "rows": [
+        {
+          "rowId": "147:1353",
+          "type": "Realized P&L",
+          "time": "11:29 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "2,83 $",
+          "eurEquiv": "≈ 2,45 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1373",
+          "type": "Funding fee",
+          "time": "10:00 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,0011 $",
+          "eurEquiv": "≈ 0,001 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1388",
+          "type": "Funding fee",
+          "time": "9:00 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,0013 $",
+          "eurEquiv": "≈ 0,0011 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1403",
+          "type": "Realized P&L",
+          "time": "7:04 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,35 $",
+          "eurEquiv": "≈ 0,30 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 13, 2026",
+      "rows": [
+        {
+          "rowId": "147:1423",
+          "type": "Deposit",
+          "time": "1:20 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "200 €",
+          "eurEquiv": null,
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1437",
+          "type": "Withdrawal",
+          "time": "1:19 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "200 €",
+          "eurEquiv": "≈ 200,00 €",
+          "tag": "transfer",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1455",
+          "type": "Deposit",
+          "time": "1:19 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "200 €",
+          "eurEquiv": null,
+          "tag": "deposit",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 10, 2026",
+      "rows": [
+        {
+          "rowId": "147:1472",
+          "type": "Realized P&L",
+          "time": "9:41 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "10,39 $",
+          "eurEquiv": "≈ 8,94 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1492",
+          "type": "Funding fee",
+          "time": "10:00 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,07 $",
+          "eurEquiv": "≈ 0,06 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 9, 2026",
+      "rows": [
+        {
+          "rowId": "147:1507",
+          "type": "Realized P&L",
+          "time": "11:30 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "5,67 $",
+          "eurEquiv": "≈ 4,92 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1527",
+          "type": "Funding fee",
+          "time": "11:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,0026 $",
+          "eurEquiv": "≈ 0,0023 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1542",
+          "type": "Realized P&L",
+          "time": "9:33 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "1,74 $",
+          "eurEquiv": "≈ 1,51 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 8, 2026",
+      "rows": [
+        {
+          "rowId": "147:1562",
+          "type": "Realized P&L",
+          "time": "7:19 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "3,86 $",
+          "eurEquiv": "≈ 3,32 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1582",
+          "type": "Funding fee",
+          "time": "7:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,02 $",
+          "eurEquiv": "≈ 0,02 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1597",
+          "type": "Realized P&L",
+          "time": "10:23 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "3,66 $",
+          "eurEquiv": "≈ 3,15 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 7, 2026",
+      "rows": [
+        {
+          "rowId": "147:1617",
+          "type": "Realized P&L",
+          "time": "3:13 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "2,72 $",
+          "eurEquiv": "≈ 2,34 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1637",
+          "type": "Funding fee",
+          "time": "3:00 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,0042 $",
+          "eurEquiv": "≈ 0,0036 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 6, 2026",
+      "rows": [
+        {
+          "rowId": "147:1652",
+          "type": "Funding fee",
+          "time": "11:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,0028 $",
+          "eurEquiv": "≈ 0,0024 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1667",
+          "type": "Realized P&L",
+          "time": "7:56 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,24 $",
+          "eurEquiv": "≈ 0,21 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 5, 2026",
+      "rows": [
+        {
+          "rowId": "147:1687",
+          "type": "Funding fee",
+          "time": "3:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,03 $",
+          "eurEquiv": "≈ 0,02 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1702",
+          "type": "Realized P&L",
+          "time": "1:19 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,48 $",
+          "eurEquiv": "≈ 0,41 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1722",
+          "type": "Realized P&L",
+          "time": "9:09 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "8,61 $",
+          "eurEquiv": "≈ 7,41 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 4, 2026",
+      "rows": [
+        {
+          "rowId": "147:1742",
+          "type": "Realized P&L",
+          "time": "8:55 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "8,59 $",
+          "eurEquiv": "≈ 7,34 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1762",
+          "type": "Realized P&L",
+          "time": "7:57 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,23 $",
+          "eurEquiv": "≈ 0,20 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 3, 2026",
+      "rows": [
+        {
+          "rowId": "147:1782",
+          "type": "Realized P&L",
+          "time": "8:53 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "2,52 $",
+          "eurEquiv": "≈ 2,16 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1802",
+          "type": "Funding fee",
+          "time": "7:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,0047 $",
+          "eurEquiv": "≈ 0,004 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Mar 1, 2026",
+      "rows": [
+        {
+          "rowId": "147:1817",
+          "type": "Realized P&L",
+          "time": "12:56 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "6,18 $",
+          "eurEquiv": "≈ 5,23 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1837",
+          "type": "Funding fee",
+          "time": "12:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,02 $",
+          "eurEquiv": "≈ 0,01 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1852",
+          "type": "Realized P&L",
+          "time": "10:01 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,24 $",
+          "eurEquiv": "≈ 0,20 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Feb 26, 2026",
+      "rows": [
+        {
+          "rowId": "147:1872",
+          "type": "Realized P&L",
+          "time": "10:42 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "5,37 $",
+          "eurEquiv": "≈ 4,54 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1892",
+          "type": "Realized P&L",
+          "time": "10:19 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,23 $",
+          "eurEquiv": "≈ 0,20 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Feb 23, 2026",
+      "rows": [
+        {
+          "rowId": "147:1912",
+          "type": "Realized P&L",
+          "time": "5:37 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "9,58 $",
+          "eurEquiv": "≈ 8,10 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1932",
+          "type": "Funding fee",
+          "time": "5:00 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,0062 $",
+          "eurEquiv": "≈ 0,0052 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1947",
+          "type": "Realized P&L",
+          "time": "2:40 PM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,23 $",
+          "eurEquiv": "≈ 0,19 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Feb 21, 2026",
+      "rows": [
+        {
+          "rowId": "147:1967",
+          "type": "Realized P&L",
+          "time": "11:10 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "2,57 $",
+          "eurEquiv": "≈ 2,18 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:1987",
+          "type": "Funding fee",
+          "time": "11:00 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,0017 $",
+          "eurEquiv": "≈ 0,0014 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2002",
+          "type": "Realized P&L",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,22 $",
+          "eurEquiv": "≈ 0,19 €",
+          "tag": "futures trade",
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2022",
+          "type": "Withdrawal",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,07 €",
+          "eurEquiv": "≈ 0,07 €",
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2037",
+          "type": "Withdrawal",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,06 €",
+          "eurEquiv": "≈ 0,06 €",
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2052",
+          "type": "Withdrawal",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,03 €",
+          "eurEquiv": "≈ 0,03 €",
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2067",
+          "type": "Withdrawal",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "-",
+          "amount": "0,03 €",
+          "eurEquiv": "≈ 0,03 €",
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2082",
+          "type": "Deposit",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,09 $",
+          "eurEquiv": "≈ 0,07 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2097",
+          "type": "Deposit",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,03 $",
+          "eurEquiv": "≈ 0,03 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2112",
+          "type": "Deposit",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,07 $",
+          "eurEquiv": "≈ 0,06 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2127",
+          "type": "Deposit",
+          "time": "10:20 AM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "0,04 $",
+          "eurEquiv": "≈ 0,03 €",
+          "tag": null,
+          "currencyIcon": "US Dollar",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Feb 19, 2026",
+      "rows": [
+        {
+          "rowId": "147:2142",
+          "type": "Deposit",
+          "time": "6:30 PM",
+          "wallet": "Kraken Futures",
+          "sign": "+",
+          "amount": "388,45 €",
+          "eurEquiv": null,
+          "tag": null,
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2156",
+          "type": "Withdrawal",
+          "time": "6:30 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "388,45 €",
+          "eurEquiv": "≈ 388,45 €",
+          "tag": "transfer",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2174",
+          "type": "Realized P&L",
+          "time": "2:35 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "2,64 €",
+          "eurEquiv": null,
+          "tag": "margin",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        },
+        {
+          "rowId": "147:2193",
+          "type": "Realized P&L",
+          "time": "12:15 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "1,57 €",
+          "eurEquiv": "≈ 1,57 €",
+          "tag": "margin",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Feb 16, 2026",
+      "rows": [
+        {
+          "rowId": "147:2213",
+          "type": "Sell",
+          "time": "2:30 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "388,93 €",
+          "eurEquiv": null,
+          "tag": "trade",
+          "currencyIcon": "Pepe",
+          "secondAmount": "- 104.72m PEPE",
+          "fee": "0.4% fee"
+        },
+        {
+          "rowId": "147:2242",
+          "type": "Buy",
+          "time": "9:07 AM",
+          "wallet": "Kraken (API keys)",
+          "sign": "-",
+          "amount": "400 €",
+          "eurEquiv": "≈ 400,00 €",
+          "tag": "trade",
+          "currencyIcon": "Euro",
+          "secondAmount": "+ 104.99m PEPE",
+          "fee": "0.25% fee"
+        }
+      ]
+    },
+    {
+      "date": "Feb 13, 2026",
+      "rows": [
+        {
+          "rowId": "147:2269",
+          "type": "Deposit",
+          "time": "2:03 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "200 €",
+          "eurEquiv": null,
+          "tag": "deposit",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    },
+    {
+      "date": "Jan 15, 2026",
+      "rows": [
+        {
+          "rowId": "147:2286",
+          "type": "Deposit",
+          "time": "1:58 PM",
+          "wallet": "Kraken (API keys)",
+          "sign": "+",
+          "amount": "200 €",
+          "eurEquiv": null,
+          "tag": "deposit",
+          "currencyIcon": "Euro",
+          "secondAmount": null,
+          "fee": null
+        }
+      ]
+    }
+  ]
+}
